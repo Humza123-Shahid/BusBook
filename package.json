@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.1",
+    "concurrently": "^9.2.1",
+    "create-react-app": "^5.1.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "both": "concurrently \"nodemon server/index.js\" \"npm run client\""
+  }
+}
