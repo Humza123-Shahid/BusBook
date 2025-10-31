@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+🚌 Bus Reservation System README
+This is a comprehensive bus ticket reservation system built using the MERN Stack (MongoDB, Express, React, Node.js).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Getting Started
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-## Available Scriptsabc
+# Prerequisites
+You'll need the following installed on your system:
 
-In the project directory, you can run:
+    `Node.js` (version 18 or later is recommended)
 
-### `npm start`
+    `npm` (Node Package Manager - comes with Node.js) or Yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    `MongoDB` (running locally or a connection string for a cloud service like MongoDB Atlas)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Installation
+1. `Clone the repository:`
 
-### `npm test`
+    git clone https://github.com/Humza123-Shahid/BusBook.git
+    cd BusBook
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. `Install dependencies` for both the client (frontend) and the server (backend) and also for root.
 
-### `npm run build`
+    `Root`:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    cd BusBook
+    npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    `Backend (Server)`:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    cd server
+    npm install
 
-### `npm run eject`
+    `Frontend (Client)`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    cd ../client
+    npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# ⚙️ Configuration
+Before running the application, you must set up your Constant.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# `Constant`:
+    In the server directory, navigate to db.js file.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    Update the following required constant, replacing the placeholders with your actual values:
 
-## Learn More
+    # MongoDB connection
+    const mongoURI="your_mongodb_connection_string_here" also add 'busbook' at the end of string
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    In the server directory, navigate to middleware/fetchuser.js file.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Update the following required constant, replacing the placeholders with your actual values:
 
-### Code Splitting
+    # JWT Secret for authentication (make this a long, random string)
+    JWT_SECRET="a_very_secret_key"
+    **
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+▶️ Running the Application
+You need to start both the backend server and the frontend client separately.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+`1. Start the Backend Server`
+    Navigate to the server directory and run nodemon script:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    cd server
+    nodemon ./index.js
+    The server should start running at the port specified in your index.js file (e.g., http://localhost:5000).
 
-### Advanced Configuration
+`2. Start the Frontend Client`
+    Open a new terminal window, navigate to the client directory, and run the start script:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    cd ../client
+    npm start
+    The client should open automatically in your browser (usually at http://localhost:3000).
 
-### Deployment
+    The application is now fully running!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+OR
+You can run both at the same time.
 
-### `npm run build` fails to minify
+`Start both Client and Server`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Navigate to root directory and run the both script:
+
+    cd BusBook
+    npm run both
+    The server should start running at the port specified in your index file (e.g., http://localhost:5000).
+    AND
+    The client should open automatically in your browser (usually at http://localhost:3000).
+
+    The application is now fully running!
+
+
+📂 Project Structure
+A brief overview of the main folders:
+`Directory`                   `Description`
+server/                       Contains the Express.js application (API, MongoDB connection, routes, controllers).
+client/                       Contains the React application (components, state management, views).
+server/models/                MongoDB schemas (e.g., Bus.js, User.js, Booking.js).7
+client/src/components/        Reusable React UI components.
